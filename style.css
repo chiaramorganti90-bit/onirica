@@ -1,0 +1,168 @@
+/* Style generale */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+/* Mappa */
+#mappa-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+#dream-map {
+  width: 80%;
+  height: 80%;
+  border: 2px solid #000;
+}
+
+#add-dream-btn {
+  position: absolute;
+  bottom: 20px;
+  padding: 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#add-dream-btn:hover {
+  background-color: #45a049;
+}
+
+/* Sidebar */
+#sidebar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  width: 300px;
+  padding: 20px;
+  box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#sidebar h2 {
+  margin-top: 0;
+}
+
+label, select, input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#applica-filtri {
+  margin-top: 20px;
+}
+
+/* Modal */
+#dream-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+#dream-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+}
+
+#close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.tab-selector {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab-button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tab-button:hover {
+  background-color: #45a049;
+}
+
+.tab-form {
+  display: none;
+}
+
+.tab-form.active {
+  display: block;
+}
+
+/* Canvas */
+#canvas-disegno {
+  border: 1px solid #000;
+}
+
+/* Responsività */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 100%;
+    position: relative;
+  }
+
+  #mappa-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  #dream-map {
+    width: 100%;
+    height: 400px;
+  }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archivio dei Sogni</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="mappa-container">
+    <canvas id="dream-map"></canvas>
+    <button id="add-dream-btn">aggiungi sogno</button>
+  </div>  <aside id="sidebar">
+    <h2>filtra i sogni</h2>
+    <label>data<input type="date" id="filtro-data" /></label><label>tipo
+  <select id="filtro-tipo">
+    <option value="">tutti</option>
+    <option value="sogno">sogno</option>
+    <option value="dormiveglia">dormiveglia</option>
+    <option value="sogno lucido">sogno lucido</option>
+    <option value="viaggio astrale">viaggio astrale</option>
+  </select>
+</label>
+
+<label>genere
+  <select id="filtro-genere">
+    <option value="">tutti</option>
+    <option value="erotico">erotico</option>
+    <option value="surreale">surreale</option>
+    <option value="fantastico">fantastico</option>
+    <option value="incubo">incubo</option>
+    <option value="romantico">romantico</option>
+    <option value="adrenalinico">adrenalinico</option>
+  </select>
+</label>
+
+<label>formato
+  <select id="filtro-formato">
+    <option value="">tutti</option>
+    <option value="testo">testo</option>
+    <option value="disegno">disegno</option>
+    <option value="audio">audio</option>
+  </select>
+</label>
+
+<button id="applica-filtri">applica</button>
+
+  </aside>  <!-- MODALE -->  <div id="dream-modal" class="hidden">
+    <div class="modal-content">
+      <span id="close-modal">×</span>
+      <h2>racconta il tuo sogno</h2><label>tipo sogno
+    <select id="input-tipo">
+      <option value="sogno">sogno</option>
+      <option value="dormiveglia">dormiveglia</option>
+      <option value="sogno lucido">sogno lucido</option>
+      <option value="viaggio astrale">viaggio astrale</option>
+    </select>
+  </label>
+
+  <label>genere (opzionale)
+    <select id="input-genere">
+      <option value="">nessuno</option>
+      <option value="erotico">erotico</option>
+      <option value="surreale">surreale</option>
+      <option value="fantastico">fantastico</option>
+      <option value="incubo">incubo</option>
+      <option value="romantico">romantico</option>
+      <option value="adrenalinico">adrenalinico</option>
+    </select>
+  </label>
+
+  <div class="tab-selector">
+    <button class="tab-button" data-tab="testo">testo</button>
+    <button class="tab-button" data-tab="disegno">disegno</button>
+    <button class="tab-button" data-tab="audio">audio</button>
+  </div>
+
+  <div id="form-testo" class="tab-form hidden">
+    <textarea id="testo-sogno" placeholder="scrivi qui il tuo sogno..."></textarea>
+  </div>
+
+  <div id="form-disegno" class="tab-form hidden">
+    <canvas id="canvas-disegno" width="300" height="300"></canvas>
+    <div class="color-picker">
+      <input type="color" id="colore-disegno" value="#0000ff" />
+      <button id="pulisci-disegno">pulisci</button>
+    </div>
+  </div>
+
+  <div id="form-audio" class="tab-form hidden">
+    <button id="start-record">inizia registrazione</button>
+    <button id="stop-record" disabled>ferma</button>
+    <audio id="anteprima-audio" controls></audio>
+  </div>
+
+  <button id="salva-sogno">salva sogno</button>
+</div>
+
+  </div>  <script src="script.js"></script></body>
+</html>
